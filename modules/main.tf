@@ -7,8 +7,11 @@ terraform {
     }
   }
 }
+variable "min_number" {
+  type        = number
+}
 resource "random_integer" "example" {
-  min = 1
+  min = "${var.min_number}"
   max = 100
 }
 
