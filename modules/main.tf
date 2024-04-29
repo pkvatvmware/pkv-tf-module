@@ -9,10 +9,15 @@ terraform {
 }
 variable "min_number" {
   type        = number
+  default     = 1
 }
+variable "max_number" {
+  type        = number
+  default     = 100
+ }
 resource "random_integer" "example" {
   min = "${var.min_number}"
-  max = 100
+  max = "${var.max_number}"
 }
 
 output "random_number" {
